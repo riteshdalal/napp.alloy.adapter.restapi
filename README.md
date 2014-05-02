@@ -70,6 +70,16 @@ Define your own custom headers. E.g. to add a BaaS API
 		"X-StackMob-API-Key": "your-stackmob-key"
 	}
 
+Define your own dynamic headers. E.g. adding a dynamic cookie value
+
+	"headers" : function(){
+		return {
+			"Cookie" : "access=" + someCustomHashFunction();
+		};
+	}
+
+Custom headers can be added to either the collection or the model or both.
+
 ### Nested Result Objects
 
 Lets say you have a REST API where the result objects are nested. Like the Twitter search API. It has the found tweets in a results object. 
@@ -118,6 +128,9 @@ parentNode: function (data) {
 
 
 ## Changelog
+
+**v1.1.5**  
+Added functionality for dynamic headers
 
 **v1.1.4**  
 Added search mode
